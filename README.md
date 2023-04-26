@@ -1,13 +1,55 @@
 # MetasploitableV2
 Running Metasploitable 2 as a Pentesting Lab
 
-## What is Metasploitable 2?
+
+
+# Setting up the Environment
+
+## Setting our environment
+Our environment will be composed of several virtual machines. Our first task is making sure out host machine is capable of running multiple guest OSes.
+
+## Hypervisor
+There are several hypervisers available (VMWare, Virtualbox, Hyper-V, etc). I’m currently running Virtualbox but feel free to chose your own.
+
+## Kali Linux
+It’s possible to download and install Kali Linux from the project’s site. I advise to download a preconfigured ISO from Offensive Security (https://www.offensive-security.com/kali-linux-vm-vmware-virtualbox-image-download/).
+
+## Update
+Kali has lots of tools for pentesting. It’s paramount to keep them updated. Open the terminal and type:
+
+```
+$ apt-get update && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get autoremove -y
+```
+
+# Metasploitable 2
+
+![image](https://user-images.githubusercontent.com/91763346/234699595-45b637a6-0310-4cd2-b19c-615cba15a05a.png)
+
+The metasploitable ISO is availble in Rapid 7’s site or on Sourceforge (http://sourceforge.net/projects/metasploitable/files/Metasploitable2/). The ISO is VMWare format.
 
 Metasploitable is a testing environment that is very useful for beginner who wants to practice and test their penetration testing skills and security research. It is a target machine that is used to discover and penetrate vulnerabilities so that the user gets an idea of somewhat close to real-life targets and machines.
 
 In other words, Metasploitable is a virtual machine intentionally vulnerable version of Ubuntu designed for testing security tools and demonstrating common vulnerabilities.
 
-## Hacking Phases
+## Virtualbox
+Unzip the file. Create a new VM. Choose Linux->Ubuntu (64bit), give it at least at least 1024MB RAM and do not create a HDD. Wait and add the disk *.vmdk:
+
+![image](https://user-images.githubusercontent.com/91763346/234700718-922fc8a1-f10a-401d-895b-b4c2432f125d.png)
+
+Change the network configuration:
+
+![image](https://user-images.githubusercontent.com/91763346/234700764-ed6f56c5-6469-42cf-a9b1-c1ecdf3a4ca6.png)
+
+## Network
+Start the machine and determine its IP address:
+
+```
+$ ifconfig
+```
+![image](https://user-images.githubusercontent.com/91763346/234701951-b6eb0fba-bf58-43a1-90be-a907c6fa8123.PNG)
+
+
+# Hacking Phases
 
 Finding and fully exploiting system vulnerabilities takes great time and patience. A typical penetration testing requires the ethical hacker to bypass authorization & authentication mechanisms, then probe the network for potential data breaches and network security threats.
 
